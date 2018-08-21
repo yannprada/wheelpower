@@ -14,7 +14,7 @@ const store = {
   },
   actions: {
     items: {
-      generate() {
+      _generate() {
         return {
           type: getRandomElement(store.state.items.types),
           quality: getRandomElement(store.state.items.qualities),
@@ -48,7 +48,7 @@ from inventory '${from}' to '${to}'`);
         store.state.inventories[name].push(item);
       },
       _addRandomItem(name) {
-        store.actions.inventories._addItem(name, store.actions.items.generate());
+        store.actions.inventories._addItem(name, store.actions.items._generate());
       },
       _removeItem(name, index) {
         return store.state.inventories[name].splice(index, 1);
