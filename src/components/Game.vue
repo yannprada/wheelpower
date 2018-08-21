@@ -15,6 +15,9 @@
           moveItemString="&lt;">
       </List>
     </div>
+    <svg class="Symbols">
+      <defs v-html="sharedState.items.symbols"></defs>
+    </svg>
   </div>
 </template>
 
@@ -41,5 +44,7 @@ export default {
 </script>
 
 <style scoped>
-
+.Symbols {
+  display: none;
+}
 </style>

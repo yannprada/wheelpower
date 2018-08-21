@@ -8,7 +8,37 @@ const store = {
   state: {
     inventories: {},
     items: {
-      types: ['Generator', 'Gearbox', 'Dynamo'],
+      symbols: `
+<g id="symbolCog">
+  <circle r="45" stroke-width="12" />
+  <path id="symbolCogTooth" d="M52 -5 L52 5" />
+  <use href="#symbolCogTooth" transform="rotate(45)" />
+  <use href="#symbolCogTooth" transform="rotate(90)" />
+  <use href="#symbolCogTooth" transform="rotate(135)" />
+  <use href="#symbolCogTooth" transform="rotate(180)" />
+  <use href="#symbolCogTooth" transform="rotate(225)" />
+  <use href="#symbolCogTooth" transform="rotate(270)" />
+  <use href="#symbolCogTooth" transform="rotate(315)" />
+</g>
+<g id="symbolCogs">
+  <use x="-40" y="-40" href="#symbolCog" />
+  <use x="40" y="40" href="#symbolCog" transform="rotate(22.5 40 40)" />
+</g>
+<g id="symbolDynamo">
+  <circle r="50" />
+  <path id="symbolDynamoEnd" d="M-80 0 L-50 0" />
+  <use href="#symbolDynamoEnd" transform="rotate(180)" />
+  <path d="M-20 0 L20 0" />
+</g>
+<g id="symbolWheel">
+  <circle r="70" />
+  <circle r="45" />
+  <path id="symbolWheelBar" d="M0 -80 L0 80" />
+  <use href="#symbolWheelBar" transform="rotate(45)" />
+  <use href="#symbolWheelBar" transform="rotate(90)" />
+  <use href="#symbolWheelBar" transform="rotate(135)" />
+</g>`,
+      types: ['Cogs', 'Dynamo', 'Wheel'],
       qualities: ['S', 'A', 'B', 'C'],
     },
   },
