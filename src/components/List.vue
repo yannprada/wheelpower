@@ -37,9 +37,11 @@ export default {
   margin: 1em;
   min-height: 10em;
   min-width: 10em;
+  padding: 1em;
+  outline: 1px solid lightgrey;
 }
 .List-title {
-
+  margin-top: 0;
 }
 .List-name {
 
