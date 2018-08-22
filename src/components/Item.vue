@@ -1,5 +1,9 @@
 <template>
-  <div class="Item" :class="qualityClass" :title="title">
+  <div class="Item"
+      :class="qualityClass"
+      :title="title"
+      @dragstart="$emit('item-dragstart')"
+  >
     <svg viewBox="-100 -100 200 200">
       <use class="Item-type" :href="'#symbol' + item.type" />
       <text class="Item-quality" x="85" y="-70">{{ item.quality }}</text>
@@ -14,7 +18,7 @@ export default {
   computed: {
     title() { return `${this.item.type} ${this.item.quality}`; },
     qualityClass() { return `Item-quality-${this.item.quality}`; },
-  }
+  },
 }
 </script>
 
@@ -24,6 +28,10 @@ export default {
   display: inline-block;
   height: 100px;
   width: 100px;
+}
+
+.Item:hover {
+  filter: brightness(1.1);
 }
 
 .Item svg {
